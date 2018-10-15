@@ -1,5 +1,5 @@
 {
-  "name": "@EkstraBladetUdvikling/eb-module-magic-shuffle",
+  "name": "@ekstra-bladet/eb-module-magic-shuffle",
   "version": "1.0.0",
   "description": "Isotope-like grouping, sorting and filtering interface",
   "main": "lib/index.js",
