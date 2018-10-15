@@ -1,0 +1,33 @@
+{
+  "name": "@EkstraBladetUdvikling/eb-module-magic-shuffle",
+  "version": "1.0.0",
+  "description": "Isotope-like grouping, sorting and filtering interface",
+  "main": "index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/issues"
+  },
+  "homepage": "https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle#readme",
+  "devDependencies": {
+    "prettier": "^1.14.3",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.3"
+  },
+  "dependencies": {
+    "debounce": "^1.2.0"
+  }
+}
