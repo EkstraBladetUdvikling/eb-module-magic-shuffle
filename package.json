@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && cp src/styles/**.css lib/",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "typedoc": "typedoc --name 'Ekstra Bladet - Magic Shuffle Module' --theme markdown --out doc/ src/scripts/*.ts",
     "lint": "tslint -p tsconfig.json"
   },
   "repository": {
@@ -25,6 +26,8 @@
     "prettier": "^1.14.3",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
+    "typedoc": "^0.13.0",
+    "typedoc-plugin-markdown": "^1.1.17",
     "typescript": "^3.1.3"
   },
   "dependencies": {
