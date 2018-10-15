@@ -1,4 +1,4 @@
-# Ekstra Bladet - Magic Shuffle Module [![Dependency Status][david-img]][david-url]] [![NPM version][npm-img]][npm-url]]
+# Ekstra Bladet - Magic Shuffle Module
 
 Isotope-like grouping, sorting and filtering interface
 
@@ -16,3 +16,7 @@ Isotope-like grouping, sorting and filtering interface
 import EbGridLayout from '@ekstra-bladet/eb-module-magic-shuffle';
 // TODO
 ```
+
+## Inspiration
+
+This project was inspired by [Isotope](http://isotope.metafizzy.co/) and [D3 Gridlayout](https://github.com/felixlaumon/d3.layout.grid)
