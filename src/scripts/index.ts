@@ -4,6 +4,12 @@ interface IElementConfig {
   attributes: object;
   innerHTML: string;
 }
+interface IOptionsConfig {
+  gridContainerClass: string,
+  gridGroupClass: string,
+  gridItemClass: string,
+  refreshRate: number
+}
 interface IStateObject {
   activeGroupBy: string;
   activeGroupElems: HTMLDivElement[];
@@ -20,10 +26,7 @@ interface IGridObject {
 }
 
 class EbGridLayout {
-  private options = {
-    gridItemClass: 'grid-item',
-    refreshRate: 200
-  };
+  private options: IOptionsConfig;
   private elements: IGridObject[] = [];
   private gridContainer: HTMLElement;
   private state: IStateObject = {
@@ -38,15 +41,23 @@ class EbGridLayout {
 
   /**
    * EbGridLayout - Class for creating a filtering, grouping and sorting grid of items
-   * @param gridContainer Target container for grid
+   * @param {HTMLElement} gridContainer Target container for grid
    * @param callback Callback function when grid is drawn (returns object with height)
+   * @param {IOptionsConfig} options Override default options object
    */
   constructor(
     gridContainer: HTMLElement,
-    callback: (state?: IStatusObject) => {}
+    callback: (state?: IStatusObject) => void,
+    options: IOptionsConfig = {
+      gridContainerClass: 'grid-container',
+      gridGroupClass: 'grid-group',
+      gridItemClass: 'grid-item',
+      refreshRate: 200
+    }
   ) {
+    this.options = options
     this.gridContainer = gridContainer;
-    this.gridContainer.classList.add('grid-container');
+    this.gridContainer.classList.add(this.options.gridContainerClass);
     this.interfaceSortElems  = document.querySelectorAll<HTMLElement>(
       '[data-sort]'
     );
@@ -239,9 +250,9 @@ class EbGridLayout {
    */
   private createGroupElem(value: string, yPos: number): number {
     const element = document.createElement('div');
-    element.className = `grid-group fade-in grid-group-${
+    element.className = `${this.options.gridGroupClass} fade-in ${this.options.gridGroupClass}-${
       this.state.activeGroupBy
-    } grid-group-${this.sanitizeForCssClass(value)}`;
+    } ${this.options.gridGroupClass}-${this.sanitizeForCssClass(value)}`;
     element.innerHTML = `<p>${value}</p>`;
     this.state.activeGroupElems.push(element);
     this.gridContainer.appendChild(element);

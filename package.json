@@ -2,11 +2,11 @@
   "name": "@EkstraBladetUdvikling/eb-module-magic-shuffle",
   "version": "1.0.0",
   "description": "Isotope-like grouping, sorting and filtering interface",
-  "main": "index.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsc && cp src/styles/**.css lib/",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json"
   },
