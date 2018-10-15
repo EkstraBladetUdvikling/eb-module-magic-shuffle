@@ -1,4 +1,4 @@
-# Ekstra Bladet - Magic Shuffle Module [![Dependency Status][david-img]][david-url] [![NPM version][npm-img]][npm-url]
+# Ekstra Bladet - Magic Shuffle Module [![Dependency Status][david-img]][david-url]] [![NPM version][npm-img]][npm-url]]
 
 Isotope-like grouping, sorting and filtering interface
 
@@ -7,7 +7,8 @@ Isotope-like grouping, sorting and filtering interface
 [Class definition and functions](doc/classes/_index_.ebgridlayout.md)
 
 ### Demos
-[Demo]: https://interactive.ekstrabladet.dk/2018/olsenbandentools/dist/index.html
+
+[Demonstration (Custom design)](https://interactive.ekstrabladet.dk/2018/olsenbandentools/dist/index.html)
 
 ### Usage
 
