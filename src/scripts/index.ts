@@ -1,35 +1,35 @@
-import debounce from 'debounce';
+import {debounce} from 'debounce';
 
-interface IElementConfig {
+interface ElementConfig {
   attributes: object;
   innerHTML: string;
 }
-interface IOptionsConfig {
+interface OptionsConfig {
   gridContainerClass: string,
   gridGroupClass: string,
   gridItemClass: string,
   refreshRate: number
 }
-interface IStateObject {
+interface StateObject {
   activeGroupBy: string;
   activeGroupElems: HTMLDivElement[];
   activeSort: string;
   activeSortAsc: boolean;
 }
-interface IStatusObject {
+interface StatusObject {
   height: number;
 }
-interface IGridObject {
+interface GridObject {
   active: boolean;
   attributes: object,
   dom: HTMLDivElement
 }
 
 class EbGridLayout {
-  private options: IOptionsConfig;
-  private elements: IGridObject[] = [];
+  private options: OptionsConfig;
+  private elements: GridObject[] = [];
   private gridContainer: HTMLElement;
-  private state: IStateObject = {
+  private state: StateObject = {
     activeGroupBy: '',
     activeGroupElems: [],
     activeSort: '',
@@ -37,7 +37,7 @@ class EbGridLayout {
   };
   private interfaceSortElems: NodeListOf<HTMLElement>;
   private interfaceGroupElems: NodeListOf<HTMLElement>;
-  private callbackFunction: (status: IStatusObject) => void;
+  private callbackFunction: (status: StatusObject) => void;
 
   /**
    * EbGridLayout - Class for creating a filtering, grouping and sorting grid of items
@@ -47,8 +47,8 @@ class EbGridLayout {
    */
   constructor(
     gridContainer: HTMLElement,
-    callback: (state?: IStatusObject) => void,
-    options: IOptionsConfig = {
+    callback: (state?: StatusObject) => void,
+    options: OptionsConfig = {
       gridContainerClass: 'grid-container',
       gridGroupClass: 'grid-group',
       gridItemClass: 'grid-item',
@@ -87,9 +87,9 @@ class EbGridLayout {
    *     },
    *     innerHTML: `<p>Test element</p>`
    * });
-   * @param {IElementConfig} elemObject Pass object with attributes and html
+   * @param {ElementConfig} elemObject Pass object with attributes and html
    */
-  public createElem(elemObject: IElementConfig): HTMLDivElement {
+  public createElem(elemObject: ElementConfig): HTMLDivElement {
     // Create DOM element
     const element = document.createElement('div');
     element.className = this.options.gridItemClass + ' invisible';
