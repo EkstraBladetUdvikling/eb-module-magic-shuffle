@@ -332,21 +332,21 @@ class EbGridLayout {
    * <button data-sort="random">Sort randomly</button>
    */
   private addEventListeners(): void {
-    for (const interfaceElem of this.interfaceSortElems) {
-      const sortByString = interfaceElem.getAttribute('data-sort') as string;
-      interfaceElem.addEventListener('click', () => {
+    for (let i = 0; i < this.interfaceSortElems.length; i++) {
+      const sortByString = this.interfaceSortElems[i].getAttribute('data-sort') as string;
+      this.interfaceSortElems[i].addEventListener('click', () => {
         this.sortBy(sortByString);
         this.deselectAllInterfaceElems();
-        interfaceElem.classList.add('eb-active');
+        this.interfaceSortElems[i].classList.add('eb-active');
       });
     }
 
-    for (const interfaceElem of this.interfaceGroupElems) {
-      const sortByString = interfaceElem.getAttribute('data-groupby') as string;
-      interfaceElem.addEventListener('click', () => {
+    for (let i = 0; i < this.interfaceGroupElems.length; i++) {
+      const sortByString = this.interfaceGroupElems[i].getAttribute('data-groupby') as string;
+      this.interfaceGroupElems[i].addEventListener('click', () => {
         this.groupBy(sortByString);
         this.deselectAllInterfaceElems();
-        interfaceElem.classList.add('eb-active');
+        this.interfaceGroupElems[i].classList.add('eb-active');
       });
     }
   }
@@ -354,11 +354,11 @@ class EbGridLayout {
    * Deselects all interface elements with eventlistners (removes eb-active class)
    */
   private deselectAllInterfaceElems(): void {
-    for (const elem of this.interfaceSortElems) {
-      elem.classList.remove('eb-active');
+    for (let i = 0; i < this.interfaceSortElems.length; i++) {
+      this.interfaceSortElems[i].classList.remove('eb-active');
     }
-    for (const elem of this.interfaceGroupElems) {
-      elem.classList.remove('eb-active');
+    for (let i = 0; i < this.interfaceGroupElems.length; i++) {
+      this.interfaceGroupElems[i].classList.remove('eb-active');
     }
   }
 
