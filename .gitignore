@@ -1,2 +1,4 @@
 node_modules
-/lib
+index.d.ts
+index.js
+main.css
