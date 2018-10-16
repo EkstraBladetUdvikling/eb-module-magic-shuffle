@@ -1,6 +1,6 @@
 {
   "name": "eb-module-magic-shuffle",
-  "version": "1.0.2-alpha2",
+  "version": "1.0.2-alpha3",
   "description": "Isotope-like grouping, sorting and filtering interface",
   "main": "index.js",
   "types": "index.d.ts",
@@ -15,7 +15,8 @@
     "build": "tsc && cp src/styles/**.css main.css",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "typedoc": "typedoc --name 'Ekstra Bladet - Magic Shuffle Module' --theme markdown --out doc/ src/scripts/*.ts",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
