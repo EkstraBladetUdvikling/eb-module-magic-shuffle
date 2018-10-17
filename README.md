@@ -6,9 +6,7 @@ Isotope-like grouping, sorting and filtering interface. This project was inspire
 
 ![Demo of Magic Shuffle](https://eb-features.s3.amazonaws.com/shared/magic-shuffle-demo.gif)
 
-
 ## Table Of Content
-
 
 * [Getting Started](#getting-started)
 * [Dependencies](#dependencies)
@@ -67,7 +65,7 @@ gridInstance.createElem({
       });
 ```
 
-The module creates corresponding DOM-elements every time `createElem()` function is invoked. The DOM-elements can be targeted in as by referencing the default classname `grid-item`.
+The module creates corresponding DOM-elements every time `createElem()` function is invoked. The DOM-elements can be targeted by referencing the default classname `grid-item`.
 
 ```css
 .grid-item {
@@ -90,15 +88,15 @@ Sorting:
 > Hides groupname and sorts by attribute
 
 ```javascript
-/* Sort items by otherdata */
+/* Sort items by otherdata attribute */
 gridInstance.sortBy('otherdata');
 ```
 
 Filter:
-> Filters out files by passing attributes to boolean function
+> Filters out elements by evaluating attributes using a boolean function
 
 ```javascript
-/* Group the created items by color and update layout */
+/* Only show blue elements */
 gridInstancer.filter((attr) => {
   return (attr.color !=== 'blue')
 })
