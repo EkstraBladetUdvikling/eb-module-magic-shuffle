@@ -47,7 +47,7 @@ class EbGridLayout {
    */
   constructor(
     gridContainer: HTMLElement,
-    callback: (state?: StatusObject) => void,
+    callback: (state?: StatusObject) => void = () => {/* No callback */},
     options: OptionsConfig = {
       gridContainerClass: 'grid-container',
       gridGroupClass: 'grid-group',

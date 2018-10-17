@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Example</title>
+      <base target="_blank">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+      <link href="not-for-production.min.css" rel="stylesheet">
+   </head>
+   <body>
+       <p>Grouping:</p>
+        <button data-groupby="shape">Group by shape</button>
+        <button data-groupby="color">Group by color</button>
+        <p>Sorting:</p>
+        <button data-sortby="color">Sort by shape</button>
+        <button data-sortby="shape">Sort by color</button>
+        <p>Filtering:</p>
+        <button class="filter-by-blue-and-triangle">Only show blue triangles</button>
+        <button class="filter-by-red-and-circle">Only show red circles</button>
+        <button class="clear-filter">Clear filters</button>
+      <div class="grid-container"></div>
+      <style>
+        /* Custom styling for grid-items */
+        .grid-item {
+            width: 50px; /* 3 elements per line */
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        /* Target content within grid-item */
+        .grid-item div {
+            width: 100%;
+            height: 100%;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        .grid-item .triangle {
+            width: 0; 
+            height: 0; 
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 45px solid #f00;
+            background-color: transparent !important;
+        }
+
+        /* Target group names */
+        .grid-group {
+            font-size: 1.2rem;
+            text-transform: capitalize;
+        }
+
+        /* Individual group targeting */
+        .grid-group-color {
+            margin-left: 20px;
+        }
+        .grid-group-color::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 30px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .grid-group-yellow::after {
+            background-color: yellow;
+        }
+        .grid-group-red::after {
+            background-color: red;
+        }
+        .grid-group-blue::after {
+            background-color: blue;
+        }
+      </style>
+      <script src="not-for-production.min.js"></script>
+      <script>
+          /* Create a new instance */
+        const gridInstance = new EbGridLayout(document.querySelector('.grid-container'));
+
+        /* Create some elements for sorting */
+        for (let i = 0; i < 30; i++) {
+            var color = getRandomFromArray(colors);
+            var shape = getRandomFromArray(shapes);
+            gridInstance.createElem({
+                attributes: {
+                    color,
+                    shape
+                },
+                innerHTML: `<div class="${shape}" style="background-color: ${color}; border-top-color: ${color};"></div>`
+            });
+        }
+
+        /* Setup filter example */
+        document.querySelector('.filter-by-blue-and-triangle').addEventListener(
+            'click',
+            () => {
+                // Filter and update
+               gridInstance.filter((attr) => {
+                   return (attr.shape === 'triangle' && attr.color === 'blue');
+               })
+            }
+        )
+
+        document.querySelector('.filter-by-red-and-circle').addEventListener(
+            'click',
+            () => {
+                // Filter and update
+               gridInstance.filter((attr) => {
+                   return (attr.shape === 'circle' && attr.color === 'red');
+               })
+            }
+        )
+
+        document.querySelector('.clear-filter').addEventListener(
+            'click',
+            () => {
+                gridInstance.clearFilter();
+            }
+        )
+       
+        /* Group the created items by color and update layout */
+        gridInstance.groupBy('color');
+      </script> 
+   </body>
+</html>

@@ -1,30 +1,46 @@
-Optional Logo
-
 # Ekstra Bladet - Magic Shuffle Module
 
 > Let the magic happen
 
-Isotope-like grouping, sorting and filtering interface. This project was inspired by [Isotope](http://isotope.metafizzy.co/) and [D3 Gridlayout](https://github.com/felixlaumon/d3.layout.grid)
+Isotope-like grouping, sorting and filtering interface. This project was inspired by [Isotope](http://isotope.metafizzy.co/) and [d3.layout.grid](https://github.com/felixlaumon/d3.layout.grid)
+
+![Demo of Magic Shuffle](https://eb-features.s3.amazonaws.com/shared/magic-shuffle-demo.gif)
+
 
 ## Table Of Content
 
+
 * [Getting Started](#getting-started)
-* [Usage](#usage)
-* [Developing](#developing)
-* [Build](#build)
-* [Deployment](#deployment)
+* [Dependencies](#dependencies)
+  * [Usage](#usage)
+* [Contributing](#contributing)
+  * [Build](#build)
 * [Questions](#questions)
 * [License](#license)
 
 ## Getting Started
 
-Start by installing the module using Node.JS:
+### Dependencies
 
-```node
+This module requires [Node.JS and NPM](https://www.npmjs.com/get-npm) for installation. The module use 'debounce' package to limit the number of invocations when resizing the browser. Add the module and install dependencies using NPM:
+
+```sh
 npm i eb-module-magic-shuffle
 ```
 
 ### Usage
+
+Create a container in the HTML-file for the shuffle:
+
+```html
+<div class="grid-container"></div>
+```
+
+Reference the required stylesheet:
+
+```css
+@import 'eb-module-magic-shuffle/main.css';
+```
 
 Reference the module in the javascript:
 
@@ -49,33 +65,74 @@ gridInstance.createElem({
         attributes: {'color': 'red', 'otherdata': 411},
         innerHTML: `<p style="color: red;">Item 3</p>`
       });
+```
 
+The module creates corresponding DOM-elements every time `createElem()` function is invoked. The DOM-elements can be targeted in as by referencing the default classname `grid-item`.
+
+```css
+.grid-item {
+  width: 33,3%;
+  background: blue;
+}
+```
+
+### Public functions
+
+Grouping:
+> Shows groupnames and sorts by item
+
+```javascript
 /* Group the created items by color and update layout */
 gridInstance.groupBy('color');
 ```
 
-Reference the required stylesheet:
+Sorting:
+> Hides groupname and sorts by attribute
 
-```css
-@import 'eb-module-magic-shuffle/main.css';
+```javascript
+/* Sort items by otherdata */
+gridInstance.sortBy('otherdata');
+```
+
+Filter:
+> Filters out files by passing attributes to boolean function
+
+```javascript
+/* Group the created items by color and update layout */
+gridInstancer.filter((attr) => {
+  return (attr.color !=== 'blue')
+})
 ```
 
 ### Examples
 
-[Demonstration (Custom design)](https://interactive.ekstrabladet.dk/2018/olsenbandentools/dist/index.html)
+* [Simple Example](example/index.html)
+* [Demonstration (Custom design)](https://interactive.ekstrabladet.dk/2018/olsenbandentools/dist/index.html)
 
-## Developing
+## Contributing
 
-[Class definition and functions](doc/classes/_index_.ebgridlayout.md)
+If you want to contribute to a project and make it better, your help is very welcome.
+
+```sh
+git clone git@github.com:EkstraBladetUdvikling/eb-module-magic-shuffle.git
+cd eb-module-magic-shuffle
+```
+
+References:
+[API Documentation](doc/classes/_index_.ebgridlayout.md)
 
 ### Build
+
+Run build to output ES5 CommonJS-module for use with package manager (index.js). Typescript definitions is automatically created (index.d.js).
 
 ```node
 npm run build
 ```
 
-### Can I live debug it?
-
-## Questions
-
 ## License
+
+Copyright © 2018, Ekstra Bladet
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.

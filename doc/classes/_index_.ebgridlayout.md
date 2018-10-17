@@ -50,9 +50,9 @@
 
 ###  constructor
 
-⊕ **new EbGridLayout**(gridContainer: *`HTMLElement`*, callback: *`function`*, options?: *[IOptionsConfig](../interfaces/_index_.ioptionsconfig.md)*): [EbGridLayout](_index_.ebgridlayout.md)
+⊕ **new EbGridLayout**(gridContainer: *`HTMLElement`*, callback?: *`function`*, options?: *[OptionsConfig](../interfaces/_index_.optionsconfig.md)*): [EbGridLayout](_index_.ebgridlayout.md)
 
-*Defined in [index.ts:40](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L40)*
+*Defined in [index.ts:40](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L40)*
 
 EbGridLayout - Class for creating a filtering, grouping and sorting grid of items
 
@@ -61,8 +61,8 @@ EbGridLayout - Class for creating a filtering, grouping and sorting grid of item
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | gridContainer | `HTMLElement` | - |  Target container for grid |
-| callback | `function` | - |  Callback function when grid is drawn (returns object with height) |
-| `Default value` options | [IOptionsConfig](../interfaces/_index_.ioptionsconfig.md) |  {gridContainerClass: &#x27;grid-container&#x27;,gridGroupClass: &#x27;grid-group&#x27;,gridItemClass: &#x27;grid-item&#x27;,refreshRate: 200} |  Override default options object |
+| `Default value` callback | `function` |  () &#x3D;&gt; {/* No callback */} |  Callback function when grid is drawn (returns object with height) |
+| `Default value` options | [OptionsConfig](../interfaces/_index_.optionsconfig.md) |  {gridContainerClass: &#x27;grid-container&#x27;,gridGroupClass: &#x27;grid-group&#x27;,gridItemClass: &#x27;grid-item&#x27;,refreshRate: 200} |  Override default options object |
 
 **Returns:** [EbGridLayout](_index_.ebgridlayout.md)
 
@@ -76,16 +76,16 @@ ___
 
 **● callbackFunction**: *`function`*
 
-*Defined in [index.ts:40](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L40)*
+*Defined in [index.ts:40](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L40)*
 
 #### Type declaration
-▸(status: *[IStatusObject](../interfaces/_index_.istatusobject.md)*): `void`
+▸(status: *[StatusObject](../interfaces/_index_.statusobject.md)*): `void`
 
 **Parameters:**
 
 | Param | Type |
 | ------ | ------ |
-| status | [IStatusObject](../interfaces/_index_.istatusobject.md) |
+| status | [StatusObject](../interfaces/_index_.statusobject.md) |
 
 **Returns:** `void`
 
@@ -94,9 +94,9 @@ ___
 
 ### `<Private>` elements
 
-**● elements**: *[IGridObject](../interfaces/_index_.igridobject.md)[]* =  []
+**● elements**: *[GridObject](../interfaces/_index_.gridobject.md)[]* =  []
 
-*Defined in [index.ts:30](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L30)*
+*Defined in [index.ts:30](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L30)*
 
 ___
 <a id="gridcontainer"></a>
@@ -105,7 +105,7 @@ ___
 
 **● gridContainer**: *`HTMLElement`*
 
-*Defined in [index.ts:31](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L31)*
+*Defined in [index.ts:31](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L31)*
 
 ___
 <a id="interfacegroupelems"></a>
@@ -114,7 +114,7 @@ ___
 
 **● interfaceGroupElems**: *`NodeListOf`<`HTMLElement`>*
 
-*Defined in [index.ts:39](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L39)*
+*Defined in [index.ts:39](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L39)*
 
 ___
 <a id="interfacesortelems"></a>
@@ -123,16 +123,16 @@ ___
 
 **● interfaceSortElems**: *`NodeListOf`<`HTMLElement`>*
 
-*Defined in [index.ts:38](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L38)*
+*Defined in [index.ts:38](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L38)*
 
 ___
 <a id="options"></a>
 
 ### `<Private>` options
 
-**● options**: *[IOptionsConfig](../interfaces/_index_.ioptionsconfig.md)*
+**● options**: *[OptionsConfig](../interfaces/_index_.optionsconfig.md)*
 
-*Defined in [index.ts:29](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L29)*
+*Defined in [index.ts:29](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L29)*
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 ▸ **addEventListeners**(): `void`
 
-*Defined in [index.ts:334](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L334)*
+*Defined in [index.ts:334](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L334)*
 
 Searches for elements with data-sort or data-group attributes and add corresponding events
 *__example__*: Sort randomly
@@ -158,7 +158,7 @@ ___
 
 ▸ **clearFilter**(): `void`
 
-*Defined in [index.ts:239](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L239)*
+*Defined in [index.ts:239](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L239)*
 
 Remove any active filter and update layout
 
@@ -169,9 +169,9 @@ ___
 
 ###  createElem
 
-▸ **createElem**(elemObject: *[IElementConfig](../interfaces/_index_.ielementconfig.md)*): `HTMLDivElement`
+▸ **createElem**(elemObject: *[ElementConfig](../interfaces/_index_.elementconfig.md)*): `HTMLDivElement`
 
-*Defined in [index.ts:92](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L92)*
+*Defined in [index.ts:92](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L92)*
 
 Create element to show on grid - Require calling updateLayout() to display
 *__example__*: this.createElem({ attributes: { 'color': 'blue', 'shape': 'Trekant' }, innerHTML: `<p>Test element</p>` });
@@ -180,7 +180,7 @@ Create element to show on grid - Require calling updateLayout() to display
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| elemObject | [IElementConfig](../interfaces/_index_.ielementconfig.md) |  Pass object with attributes and html |
+| elemObject | [ElementConfig](../interfaces/_index_.elementconfig.md) |  Pass object with attributes and html |
 
 **Returns:** `HTMLDivElement`
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **createGroupElem**(value: *`string`*, yPos: *`number`*): `number`
 
-*Defined in [index.ts:251](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L251)*
+*Defined in [index.ts:251](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L251)*
 
 Create DOM element for display attribute key name (groupname)
 
@@ -211,7 +211,7 @@ ___
 
 ▸ **deselectAllInterfaceElems**(): `void`
 
-*Defined in [index.ts:356](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L356)*
+*Defined in [index.ts:356](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L356)*
 
 Deselects all interface elements with eventlistners (removes eb-active class)
 
@@ -224,7 +224,7 @@ ___
 
 ▸ **filter**(filterFunction: *`function`*): `void`
 
-*Defined in [index.ts:228](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L228)*
+*Defined in [index.ts:228](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L228)*
 
 Persistent filter out specific elements and update
 *__example__*: // Only show circles: this.filter((attr) => attr.shape === 'circle');
@@ -244,7 +244,7 @@ ___
 
 ▸ **groupBy**(attribute: *`string`*): `void`
 
-*Defined in [index.ts:207](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L207)*
+*Defined in [index.ts:207](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L207)*
 
 Group elements by attribute
 
@@ -263,7 +263,7 @@ ___
 
 ▸ **removeGroupElems**(): `void`
 
-*Defined in [index.ts:268](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L268)*
+*Defined in [index.ts:268](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L268)*
 
 Remove any DOM Elements displaying group names
 
@@ -276,7 +276,7 @@ ___
 
 ▸ **sanitizeForCssClass**(name: *`string`*): `string`
 
-*Defined in [index.ts:379](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L379)*
+*Defined in [index.ts:379](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L379)*
 
 Sanitize string to CSS classname
 
@@ -295,7 +295,7 @@ ___
 
 ▸ **setPosition**(element: *`HTMLDivElement`*, x: *`number`*, y: *`number`*): `void`
 
-*Defined in [index.ts:371](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L371)*
+*Defined in [index.ts:371](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L371)*
 
 Move element by using to CSS3
 
@@ -316,7 +316,7 @@ ___
 
 ▸ **shuffle**(): `void`
 
-*Defined in [index.ts:309](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L309)*
+*Defined in [index.ts:309](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L309)*
 
 Shuffles array (elements) randomly and update layout
 
@@ -329,7 +329,7 @@ ___
 
 ▸ **sortBy**(attribute: *`string`*, ascending?: *`boolean`*):  `undefined` &#124; `0`
 
-*Defined in [index.ts:184](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L184)*
+*Defined in [index.ts:184](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L184)*
 
 Public function for sorting elements by attribute
 
@@ -349,7 +349,7 @@ ___
 
 ▸ **sortElementsArray**(attribute: *`string`*, ascending?: *`boolean`*): `void`
 
-*Defined in [index.ts:281](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L281)*
+*Defined in [index.ts:281](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L281)*
 
 Lowlevel array sorting (this.elements\[\]) by attribute
 
@@ -369,7 +369,7 @@ ___
 
 ▸ **updateLayout**(): `void`
 
-*Defined in [index.ts:112](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L112)*
+*Defined in [index.ts:112](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L112)*
 
 Update layout with any active filters, sorting or grouping
 
@@ -385,7 +385,7 @@ ___
 
 **state**: *`object`*
 
-*Defined in [index.ts:32](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L32)*
+*Defined in [index.ts:32](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L32)*
 
 <a id="state.activegroupby"></a>
 
@@ -393,7 +393,7 @@ ___
 
 **● activeGroupBy**: *`string`* = ""
 
-*Defined in [index.ts:33](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L33)*
+*Defined in [index.ts:33](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L33)*
 
 ___
 <a id="state.activegroupelems"></a>
@@ -402,7 +402,7 @@ ___
 
 **● activeGroupElems**: *`never`[]* =  []
 
-*Defined in [index.ts:34](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L34)*
+*Defined in [index.ts:34](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L34)*
 
 ___
 <a id="state.activesort"></a>
@@ -411,7 +411,7 @@ ___
 
 **● activeSort**: *`string`* = ""
 
-*Defined in [index.ts:35](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L35)*
+*Defined in [index.ts:35](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L35)*
 
 ___
 <a id="state.activesortasc"></a>
@@ -420,7 +420,7 @@ ___
 
 **● activeSortAsc**: *`true`* = true
 
-*Defined in [index.ts:36](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/ee63f9e/src/scripts/index.ts#L36)*
+*Defined in [index.ts:36](https://github.com/EkstraBladetUdvikling/eb-module-magic-shuffle/blob/c2fd667/src/scripts/index.ts#L36)*
 
 ___
 

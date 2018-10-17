@@ -10,11 +10,11 @@
 
 ### Interfaces
 
-* [IElementConfig](../interfaces/_index_.ielementconfig.md)
-* [IGridObject](../interfaces/_index_.igridobject.md)
-* [IOptionsConfig](../interfaces/_index_.ioptionsconfig.md)
-* [IStateObject](../interfaces/_index_.istateobject.md)
-* [IStatusObject](../interfaces/_index_.istatusobject.md)
+* [ElementConfig](../interfaces/_index_.elementconfig.md)
+* [GridObject](../interfaces/_index_.gridobject.md)
+* [OptionsConfig](../interfaces/_index_.optionsconfig.md)
+* [StateObject](../interfaces/_index_.stateobject.md)
+* [StatusObject](../interfaces/_index_.statusobject.md)
 
 ---
 
