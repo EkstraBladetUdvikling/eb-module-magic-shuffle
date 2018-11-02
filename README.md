@@ -9,11 +9,12 @@ Isotope-like grouping, sorting and filtering interface. This project was inspire
 ## Table Of Content
 
 * [Getting Started](#getting-started)
-* [Dependencies](#dependencies)
+  * [Dependencies](#dependencies)
   * [Usage](#usage)
+  * [Public functions](#public-functions)
+  * [Examples](#examples)
 * [Contributing](#contributing)
   * [Build](#build)
-* [Questions](#questions)
 * [License](#license)
 
 ## Getting Started
